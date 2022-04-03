@@ -1,0 +1,14 @@
+Команда pyinstaller:
+pyinstaller -w -F -i "D:\PycharmProjects\DesktopParser\icon-Py.ico" "parser.py"
+Команда для реформатирования дизайн файла:
+pyuic5 file.ui -o file.py
+
+Чтобы не появлялось окно консоли:
+Добавить импорт:
+from subprocess import CREATE_NO_WINDOW
+
+Добавить в код при получении экземпляра драйвера:
+service = Service(path_to_chromedriver)
+service.creationflags = CREATE_NO_WINDOW
+op = webdriver.ChromeOptions()
+s = webdriver.Chrome(service=service, options=op)
